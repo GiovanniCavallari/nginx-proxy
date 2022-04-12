@@ -33,6 +33,17 @@ Params explained:
 
 Start some sample app for the proxy tunnel to access your localhost and return the content. For example, some app using express.
 
-### 4. Access the proxy tunnel URL
+### 4. Open SSH connection
+
+```
+ssh -nN -R TUNNEL_PORT:localhost:LOCALHOST_APP_PORT username@yourdomain.com
+
+```
+
+Ports explained:
+- **LOCALHOST_APP_PORT** refers to the port that your app is running on localhost.
+- **TUNNEL_PORT** is the forwarded port on the host that we use to directly SSH into the container.
+
+### 5. Access the proxy tunnel URL
 
 As long as you keep this SSH connection open, you'll be able to access your app from either http://localhost or http://dev.app.com.
