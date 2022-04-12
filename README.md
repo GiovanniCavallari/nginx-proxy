@@ -1,12 +1,5 @@
 # NGINX Proxy Tunnel
 
-## Table of Contents
-- [Description](#description)
-- [Setup with Docker](#usage)
-- [Setup without Docker](#install)
-
-## Description
-
 This project allows you to access an application running on localhost from a remote URL. 
 
 This is useful for testing integrations that cannot access localhost and need an application running in the cloud.
@@ -15,7 +8,7 @@ If you've used ngrok, it works the same way, but with a little more control.
 
 ![Architecture](/architecture.png?raw=true "Architecture")
 
-## Setup with Docker
+## Setup
 
 ###  1. Clone the repository on your instance
 
@@ -53,6 +46,3 @@ Ports explained:
 ### 5. Access the proxy tunnel URL
 
 As long as you keep this SSH connection open, you'll be able to access your app from either http://localhost or http://dev.app.com.
-
-## Setup without Docker
-
