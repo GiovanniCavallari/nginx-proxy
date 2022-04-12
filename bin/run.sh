@@ -8,14 +8,14 @@
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] || [ -z "$4" ]
 then
-    echo "USAGE: docker run --rm -it -p [TUNNEL_PORT]:80 -e TUNNEL_PATH=[TUNNEL_PATH] -e TUNNEL_URL=[TUNNEL_URL]:[TUNNEL_PORT] --name [CONTAINER_NAME] giocavallari/nginx_proxy";
+    echo "USAGE: docker run --rm -it -p [TUNNEL_PORT]:80 -e TUNNEL_PATH=[TUNNEL_PATH] -e TUNNEL_URL=[TUNNEL_URL]:[TUNNEL_PORT] --name [CONTAINER_NAME] giocavallari/nginx-proxy";
     echo "ERROR: Missing params";
     exit;
 fi
 
 if [ -z "$5" ]
 then
-    docker run --rm -it -p $3:80 -e TUNNEL_PATH=$2 -e TUNNEL_URL=$1:$4/ giocavallari/nginx_proxy
+    docker run --rm -it -p $3:80 -e TUNNEL_PATH=$2 -e TUNNEL_URL=$1:$4/ giocavallari/nginx-proxy
 else
-    docker run --rm -it -p $3:80 -e TUNNEL_PATH=$2 -e TUNNEL_URL=$1:$4/ --name $5 giocavallari/nginx_proxy
+    docker run --rm -it -p $3:80 -e TUNNEL_PATH=$2 -e TUNNEL_URL=$1:$4/ --name $5 giocavallari/nginx-proxy
 fi
