@@ -1,7 +1,7 @@
 server {
     listen 80;
     
-    location ${TUNNEL_PATH} {
+    location /${TUNNEL_PATH} {
         proxy_pass http://${TUNNEL_URL};
 
         proxy_redirect off;

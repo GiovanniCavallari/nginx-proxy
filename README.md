@@ -1,1 +1,38 @@
-# nginx-proxy
+# NGINX Proxy Tunnel
+
+This project allows you to access an application running on localhost from a remote URL. 
+
+This is useful for testing integrations that cannot access localhost and need an application running in the cloud.
+
+If you've used ngrok, it works the same way, but with a little more control.
+
+![Architecture](/architecture.png?raw=true "Architecture")
+
+## Instructions
+
+###  1. Clone the repository on your instance
+
+```
+git clone https://github.com/GiovanniCavallari/nginx-proxy.git
+```
+
+### 2. Run the script
+
+Params explained:
+- **TUNNEL_HOST** is the internal host of your instance.
+- **TUNNEL_PATH** is the path you will access to redirect to your localhost.
+- **HOST_PORT** is the port to receive browser requests on host.
+- **TUNNEL_PORT** is the port that will be used to redirect browser requests to localhost.
+- **CONTAINER_NAME** is the container name to make docker cli easy to use.
+
+```
+sh bin/run.sh TUNNEL_HOST TUNNEL_PATH HOST_PORT TUNNEL_PORT CONTAINER_NAME
+```
+
+### 3. Start the sample app on localhosts
+
+Start some sample app for the proxy tunnel to access your localhost and return the content. For example, some app using express.
+
+### 4. Access the proxy tunnel URL
+
+As long as you keep this SSH connection open, you'll be able to access your app from either http://localhost or https://dev.app.com.
