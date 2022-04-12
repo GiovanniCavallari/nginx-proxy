@@ -29,7 +29,7 @@ Params explained:
 - **TUNNEL_PORT** is the port that will be used to redirect browser requests to localhost.
 - **CONTAINER_NAME** is the container name to make docker cli easy to use.
 
-### 3. Start the sample app on localhosts
+### 3. Start the sample app on localhost
 
 Start some sample app for the proxy tunnel to access your localhost and return the content. For example, some app using express.
 
