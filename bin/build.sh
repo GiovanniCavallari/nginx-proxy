@@ -1,3 +1,3 @@
 #!bin/bash
 
-docker build -t giocavallari/nginx_proxy:latest .
+docker build -t giocavallari/nginx-proxy:latest .
