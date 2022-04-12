@@ -35,4 +35,4 @@ Start some sample app for the proxy tunnel to access your localhost and return t
 
 ### 4. Access the proxy tunnel URL
 
-As long as you keep this SSH connection open, you'll be able to access your app from either http://localhost or https://dev.app.com.
+As long as you keep this SSH connection open, you'll be able to access your app from either http://localhost or http://dev.app.com.
