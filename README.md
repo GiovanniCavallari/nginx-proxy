@@ -37,7 +37,6 @@ Start some sample app for the proxy tunnel to access your localhost and return t
 
 ```
 ssh -nN -R TUNNEL_PORT:localhost:LOCALHOST_APP_PORT username@yourdomain.com
-
 ```
 
 Ports explained:
