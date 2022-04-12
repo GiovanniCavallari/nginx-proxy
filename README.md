@@ -8,7 +8,7 @@ If you've used ngrok, it works the same way, but with a little more control.
 
 ![Architecture](/architecture.png?raw=true "Architecture")
 
-## Instructions
+## Automated Setup
 
 ###  1. Clone the repository on your instance
 
