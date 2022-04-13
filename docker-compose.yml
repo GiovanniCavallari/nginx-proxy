@@ -5,7 +5,7 @@ services:
     image: giocavallari/nginx-proxy
     container_name: nginx
     environment:
-      - TUNNEL_PORT=80
+      - TUNNEL_PORT=8888
       - TUNNEL_PATH=/gateway
     ports:
       - 80:80
