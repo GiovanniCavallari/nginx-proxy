@@ -8,7 +8,7 @@ This is useful for testing integrations that cannot access localhost and need an
 
 If you've used ngrok, it works the same way, but with a little more control.
 
-![Architecture](/architecture.png?raw=true "Architecture")
+![Diagram](/diagram.png?raw=true "Diagram")
 
 ## Setup
 
