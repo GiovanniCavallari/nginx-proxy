@@ -41,8 +41,8 @@ ssh -nN -R TUNNEL_PORT:localhost:LOCALHOST_APP_PORT username@yourdomain.com
 ```
 
 Ports explained:
-- **LOCALHOST_APP_PORT** refers to the port that your app is running on localhost.
 - **TUNNEL_PORT** is the forwarded port on the host that we use to directly SSH into the container.
+- **LOCALHOST_APP_PORT** refers to the port that your app is running on localhost.
 
 ### 5. Access the proxy tunnel URL
 
