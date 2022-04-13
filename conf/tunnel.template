@@ -2,7 +2,7 @@ server {
     listen 80;
     
     location ${TUNNEL_PATH} {
-        proxy_pass http://${TUNNEL_URL};
+        proxy_pass http://host.docker.internal:${TUNNEL_PORT}/;
 
         proxy_redirect off;
         proxy_set_header Host $host;

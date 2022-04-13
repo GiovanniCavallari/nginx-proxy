@@ -5,7 +5,8 @@ services:
     image: giocavallari/nginx-proxy
     container_name: nginx
     environment:
+      - TUNNEL_PORT=80
       - TUNNEL_PATH=/gateway
-      - TUNNEL_URL=host.docker.internal/
     ports:
       - 8888:80
+    
