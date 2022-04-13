@@ -21,7 +21,7 @@ git clone https://github.com/GiovanniCavallari/nginx-proxy.git
 ### 2. Run the script
 
 ```
-sh bin/run.sh HOST_PORT TUNNEL_PORT TUNNEL_PATH CONTAINER_NAME
+bash bin/run.bash HOST_PORT TUNNEL_PORT TUNNEL_PATH CONTAINER_NAME
 ```
 
 Params explained:
