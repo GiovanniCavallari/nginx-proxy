@@ -21,14 +21,13 @@ git clone https://github.com/GiovanniCavallari/nginx-proxy.git
 ### 2. Run the script
 
 ```
-sh bin/run.sh TUNNEL_HOST TUNNEL_PATH HOST_PORT TUNNEL_PORT CONTAINER_NAME
+sh bin/run.sh HOST_PORT TUNNEL_PORT TUNNEL_PATH CONTAINER_NAME
 ```
 
 Params explained:
-- **TUNNEL_HOST** is the internal host of your instance.
-- **TUNNEL_PATH** is the path you will access to redirect to your localhost.
 - **HOST_PORT** is the port to receive browser requests on host.
 - **TUNNEL_PORT** is the port that will be used to redirect browser requests to localhost.
+- **TUNNEL_PATH** is the path you will access to redirect to your localhost.
 - **CONTAINER_NAME** is the container name to make docker cli easy to use.
 
 ### 3. Start the sample app on localhost
