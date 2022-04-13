@@ -9,6 +9,5 @@ services:
       - TUNNEL_PATH=/gateway
     ports:
       - 8888:80
-    network_mode: "host"
     extra_hosts:
       - host.docker.internal:127.0.0.1
