@@ -19,10 +19,10 @@ then
 
     if [[ $OSTYPE == 'darwin'* ]];
     then
-        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2/ giocavallari/nginx-proxy
+        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 giocavallari/nginx-proxy
     elif [[ $OSTYPE == 'linux'* ]]; 
     then
-        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2/ --net=host --add-host=$INTERNAL_HOST:127.0.0.1 giocavallari/nginx-proxy
+        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --net=host --add-host=$INTERNAL_HOST:127.0.0.1 giocavallari/nginx-proxy
     else
         exit;
     fi
@@ -31,10 +31,10 @@ else
 
     if [[ $OSTYPE == 'darwin'* ]];
     then
-        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2/ --name $4 giocavallari/nginx-proxy
+        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --name $4 giocavallari/nginx-proxy
     elif [[ $OSTYPE == 'linux'* ]]; 
     then
-        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2/ --net=host --add-host=$INTERNAL_HOST:127.0.0.1 --name $4 giocavallari/nginx-proxy
+        docker run --rm -it -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --net=host --add-host=$INTERNAL_HOST:127.0.0.1 --name $4 giocavallari/nginx-proxy
     else
         exit;
     fi
