@@ -1,6 +1,12 @@
 #!/bin/bash
 
-PATH=$1
+# $1 - PATH
+
+if [ -z "$1" ]
+then
+    echo "ERROR: Missing PATH";
+    exit;
+fi
 
 sudo apt-get install nginx
 sudo rm /etc/nginx/sites-enabled/default*
