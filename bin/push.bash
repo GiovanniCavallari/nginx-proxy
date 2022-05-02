@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# $1 - Image tag
+# $1 - IMAGE_TAG
 
 if [ -z "$1" ]
 then
     echo "USAGE: docker push giocavallari/nginx-proxy:[TAG]";
-    echo "ERROR: Missing tag param";
+    echo "ERROR: Missing params:";
+    echo " - Missing param 1 -> IMAGE_TAG";
     exit;
 fi
 

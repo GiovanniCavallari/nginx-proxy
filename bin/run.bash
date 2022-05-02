@@ -10,7 +10,10 @@ INTERNAL_HOST=host.docker.internal
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]
 then
     echo "USAGE: docker run --rm -it -p [HOST_PORT]:80 -e TUNNEL_PATH=[TUNNEL_PATH] -e TUNNEL_PORT=[TUNNEL_PORT] --name [CONTAINER_NAME] giocavallari/nginx-proxy";
-    echo "ERROR: Missing params";
+    echo "ERROR: Missing params:";
+    echo " - Missing param 1 -> HOST_PORT";
+    echo " - Missing param 2 -> TUNNEL_PORT";
+    echo " - Missing param 3 -> TUNNEL_PATH";
     exit;
 fi
 

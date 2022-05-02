@@ -4,7 +4,8 @@
 
 if [ -z "$1" ]
 then
-    echo "ERROR: Missing PATH";
+    echo "ERROR: Missing params:";
+    echo " - Missing param 1 -> PATH";
     exit;
 fi
 
