@@ -51,8 +51,7 @@ Ports explained:
 
 ### 5. Access the proxy tunnel URL
 
-As long as you keep this SSH connection open, you'll be able to access your app from either 
-http://localhost or http://dev.app.com.
+As long as you keep this SSH connection open, you'll be able to access your app from either http://localhost or http://dev.app.com.
 
 ---
 
