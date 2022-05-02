@@ -56,7 +56,6 @@ As long as you keep this SSH connection open, you'll be able to access your app 
 - http://localhost
 - http://dev.app.com
 
----
 
 ## SSL
 
