@@ -1,5 +1,10 @@
 # NGINX Proxy Tunnel
 
+## Table of Contents
+- [Description](#description)
+- [Setup](#setup)
+- [SSL](#ssl)
+
 ## Description
 
 This project allows you to access an application running on localhost from a remote URL. 
