@@ -6,7 +6,7 @@
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]
 then
-    echo "USAGE: certbot --nginx -d [DOMAIN_NAME] --non-interactive --agree-tos -m [EMAIL]";
+    echo "USAGE: certbot --nginx -d [DOMAIN_NAME] --non-interactive --agree-tos --redirect -m [EMAIL]";
     echo "ERROR: Missing params:";
     echo " - Missing param 1 -> DOMAIN_NAME";
     echo " - Missing param 2 -> EMAIL";
@@ -16,4 +16,4 @@ fi
 
 docker exec -it $3 apt-get update
 docker exec -it $3 apt-get install certbot python3-certbot-nginx -y
-docker exec -it $3 certbot --nginx -d $1 --non-interactive --agree-tos -m $2
+docker exec -it $3 certbot --nginx -d $1 --non-interactive --agree-tos --redirect -m $2
