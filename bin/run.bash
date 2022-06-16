@@ -9,7 +9,7 @@ INTERNAL_HOST=host.docker.internal
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ]
 then
-    echo "USAGE: docker run --rm -it -p [HOST_PORT]:80 -e TUNNEL_PATH=[TUNNEL_PATH] -e TUNNEL_PORT=[TUNNEL_PORT] --name [CONTAINER_NAME] giocavallari/nginx-proxy";
+    echo "USAGE: docker run --rm -dit -p [HOST_PORT]:80 -e TUNNEL_PATH=[TUNNEL_PATH] -e TUNNEL_PORT=[TUNNEL_PORT] --name [CONTAINER_NAME] giocavallari/nginx-proxy";
     echo "ERROR: Missing params:";
     echo " - Missing param 1 -> HOST_PORT";
     echo " - Missing param 2 -> TUNNEL_PORT";
@@ -22,10 +22,10 @@ then
 
     if [[ $OSTYPE == 'darwin'* ]];
     then
-        docker run --rm -it -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 giocavallari/nginx-proxy
+        docker run --rm -dit -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 giocavallari/nginx-proxy
     elif [[ $OSTYPE == 'linux'* ]]; 
     then
-        docker run --rm -it -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --net=host --add-host=$INTERNAL_HOST:127.0.0.1 giocavallari/nginx-proxy
+        docker run --rm -dit -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --net=host --add-host=$INTERNAL_HOST:127.0.0.1 giocavallari/nginx-proxy
     else
         exit;
     fi
@@ -34,10 +34,10 @@ else
 
     if [[ $OSTYPE == 'darwin'* ]];
     then
-        docker run --rm -it -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --name $4 giocavallari/nginx-proxy
+        docker run --rm -dit -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --name $4 giocavallari/nginx-proxy
     elif [[ $OSTYPE == 'linux'* ]]; 
     then
-        docker run --rm -it -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --net=host --add-host=$INTERNAL_HOST:127.0.0.1 --name $4 giocavallari/nginx-proxy
+        docker run --rm -dit -v npcerts:/etc/letsencrypt -p $1:80 -e TUNNEL_PATH=$3 -e TUNNEL_PORT=$2 --net=host --add-host=$INTERNAL_HOST:127.0.0.1 --name $4 giocavallari/nginx-proxy
     else
         exit;
     fi
