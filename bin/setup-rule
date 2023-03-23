@@ -3,16 +3,16 @@
 # $1 - RULE_NAME
 # $2 - TUNNEL_PATH
 # $3 - TUNNEL_PORT
-# $4 - CONTAINER_NAME
+# $4 - CONTAINER
 
 if [ -z "$1" ] || [ -z "$2" ] || [ -z "$4" ] || [ -z "$4" ]
 then
-    echo "USAGE: docker exec -it [CONTAINER_NAME] command";
+    echo "USAGE: docker exec -it [CONTAINER] command";
     echo "ERROR: Missing params:";
     echo " - Missing param 1 -> RULE_NAME";
     echo " - Missing param 2 -> TUNNEL_PATH";
     echo " - Missing param 3 -> TUNNEL_PORT";
-    echo " - Missing param 4 -> CONTAINER_NAME";
+    echo " - Missing param 4 -> CONTAINER";
     exit;
 fi
 
