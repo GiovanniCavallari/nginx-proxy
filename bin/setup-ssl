@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 # $1 - DOMAIN_NAME
 # $2 - EMAIL
@@ -19,7 +19,7 @@ echo "Accessing container $3... \n"
 echo "Running apt-get update...";
 docker exec -it $3 apt-get update
 if [ $? -eq 0 ]; then
-    echo "\033[01;32mExecuted successfully \n \033[0m";
+    echo "Executed successfully \n";
 else
     exit;
 fi
@@ -27,7 +27,7 @@ fi
 echo "Installing certbot...";
 docker exec -it $3 apt-get install certbot python3-certbot-nginx -y
 if [ $? -eq 0 ]; then
-    echo "\033[01;32mExecuted successfully \n \033[0m";
+    echo "Executed successfully \n";
 else
     exit;
 fi
@@ -35,7 +35,7 @@ fi
 echo "Installing certbot ssl..."
 docker exec -it $3 certbot --nginx -d $1 --non-interactive --agree-tos --redirect -m $2
 if [ $? -eq 0 ]; then
-    echo "\033[01;32mExecuted successfully \n \033[0m";
+    echo "Executed successfully \n";
 else
     exit;
 fi

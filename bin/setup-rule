@@ -1,0 +1,43 @@
+# !/bin/bash
+
+# $1 - RULE_NAME
+# $2 - TUNNEL_PATH
+# $3 - TUNNEL_PORT
+# $4 - CONTAINER_NAME
+
+if [ -z "$1" ] || [ -z "$2" ] || [ -z "$4" ] || [ -z "$4" ]
+then
+    echo "USAGE: docker exec -it [CONTAINER_NAME] command";
+    echo "ERROR: Missing params:";
+    echo " - Missing param 1 -> RULE_NAME";
+    echo " - Missing param 2 -> TUNNEL_PATH";
+    echo " - Missing param 3 -> TUNNEL_PORT";
+    echo " - Missing param 4 -> CONTAINER_NAME";
+    exit;
+fi
+
+echo "Accessing container $4... \n"
+
+echo "Running command to setup new nginx rule...";
+docker exec -it $4 bash -c "export TUNNEL_PORT=$3 ; export TUNNEL_PATH=$2 ; envsubst '\$TUNNEL_PORT \$TUNNEL_PATH' < /etc/nginx/conf.d/rules/custom-rule.template > /etc/nginx/conf.d/rules/$1-rule.conf"
+if [ $? -eq 0 ]; then
+    echo "Executed successfully \n";
+else
+    exit;
+fi
+
+echo "Running nginx reload...";
+docker exec -it $4 /etc/init.d/nginx reload
+if [ $? -eq 0 ]; then
+    echo "Executed successfully \n";
+else
+    exit;
+fi
+
+echo "Running nginx status...";
+docker exec -it $4 /etc/init.d/nginx status
+if [ $? -eq 0 ]; then
+    echo "Executed successfully \n";
+else
+    exit;
+fi

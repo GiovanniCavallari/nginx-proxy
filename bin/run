@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 # $1 - HOST_PORT
 # $2 - TUNNEL_PORT
