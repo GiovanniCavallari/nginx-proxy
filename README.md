@@ -80,14 +80,13 @@ As long as you keep this SSH connection open, you'll be able to access your app 
 
 ## Setup rule
 
-
-> Note: if a RULE_NAME that already exists is set, the old rule will be overwritten
-
 Run the script to create and setup a new rule on nginx:
 
 ```
 bash bin/setup-rule RULE_NAME TUNNEL_PATH TUNNEL_PORT CONTAINER_NAME
 ```
+
+> Note: if a RULE_NAME that already exists is set, the old rule will be overwritten
 
 Params explained:
 - **RULE_NAME** is the name used to create a file for the rule.
