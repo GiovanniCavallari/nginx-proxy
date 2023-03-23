@@ -80,6 +80,9 @@ As long as you keep this SSH connection open, you'll be able to access your app 
 
 ## Setup rule
 
+
+> Note: if a RULE_NAME that already exists is set, the old rule will be overwritten
+
 Run the script to create and setup a new rule on nginx:
 
 ```
@@ -91,5 +94,3 @@ Params explained:
 - **TUNNEL_PATH** is the path you will access to redirect to your localhost.
 - **TUNNEL_PORT** is the port that will be used to redirect browser requests to localhost.
 - **CONTAINER** is the container name or container id.
-
-> Note: if a RULE_NAME that already exists is set, the old rule will be overwritten
