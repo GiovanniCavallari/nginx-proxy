@@ -19,7 +19,7 @@ echo "Installing certbot ssl..."
 
 docker exec -it $3 certbot --nginx -d $1 --non-interactive --agree-tos --redirect -m $2
 if [ $? -eq 0 ]; then
-    echo "Executed successfully \n";
+    echo "Executed successfully";
 else
     exit;
 fi
